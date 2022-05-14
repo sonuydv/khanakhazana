@@ -1,0 +1,12 @@
+.food-image img{
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-image ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #630808;
+}

@@ -24,4 +24,11 @@ body { margin: 0; font-family: Roboto, 'Poppins', sans-serif }
   padding: 0;
 }
 
+.mat-dialog-container{
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 

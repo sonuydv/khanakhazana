@@ -16,6 +16,9 @@ import { FoodMenuComponent } from './ui/food-menu/food-menu.component';
 import { TestimonialComponent } from './ui/testimonial/testimonial.component';
 import { OrdersComponent } from './ui/orders/orders.component';
 import {MatCardModule} from "@angular/material/card";
+import { LoaderComponent } from './ui/loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import {MatCardModule} from "@angular/material/card";
     AboutComponent,
     FoodMenuComponent,
     TestimonialComponent,
-    OrdersComponent
+    OrdersComponent,
+    LoaderComponent
   ],
     imports: [
         BrowserModule,
@@ -37,7 +41,9 @@ import {MatCardModule} from "@angular/material/card";
         ReactiveFormsModule,
         FormsModule,
         MatButtonModule,
-        MatCardModule
+        MatCardModule,
+        MatProgressSpinnerModule,
+      MatSnackBarModule
     ],
   providers: [],
   bootstrap: [AppComponent]
