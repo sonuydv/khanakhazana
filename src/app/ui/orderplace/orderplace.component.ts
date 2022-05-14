@@ -19,8 +19,8 @@ export class OrderplaceComponent implements OnInit {
 
   constructor(
     private snackbar: MatSnackBar,
-    private fb : FormBuilder,
-    @Inject(MAT_DIALOG_DATA) private matInputData: {orderId: number},
+    private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) private matInputData: { orderId: number },
     private matDialogRef: MatDialogRef<OrderplaceComponent>
   ) {
 
@@ -28,20 +28,23 @@ export class OrderplaceComponent implements OnInit {
 
     this.form = this.fb.group({
       name: ['', Validators.required],
-      contact: ['', [Validators.required,Validators.pattern("^[0-9]*$")]],
-      email: [ '', [Validators.email]],
+      contact: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      email: ['', [Validators.email]],
     });
   }
 
   ngOnInit(): void {
   }
 
-  public orderPlace(){
-    this
+  public orderPlace() {
+    if(AppConfig.orderList.getValue() != null || AppConfig.orderList.getValue() != undefined)
     DataApi.updateOrderList(AppConfig.orderList.getValue()
       .concat(new OrderItem(this.orderId, this.form.value.name)))
+    else
+      DataApi.updateOrderList(new Array<OrderItem>(new OrderItem(this.orderId, this.form.value.name)))
+
     this.matDialogRef.close()
-    this.snackbar.open('Order Placed Successfully' , 'ok', {
+    this.snackbar.open('Order Placed Successfully', 'ok', {
       duration: 3000
     })
   }

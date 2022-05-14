@@ -1,7 +1,7 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
-import {FoodItem, OrderItem} from "./data/model/models";
+import {OrderItem} from "./data/model/models";
 import {AppConfig} from "./app-config";
 import {DataApi} from "./data/api/data.api";
 

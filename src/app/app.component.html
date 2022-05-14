@@ -6,7 +6,7 @@
       <li><a routerLink="/foodMenu">Menu</a></li>
       <li><a routerLink="/orders">
         Orders
-        <span *ngIf="orderList.length > 0" class="order-count">{{orderList.length}}</span>
+        <span *ngIf="orderList" class="order-count">{{orderList?.length}}</span>
       </a></li>
       <li><a routerLink="testimonial">Testimonial</a></li>
       <li><a routerLink="/about">About</a></li>
